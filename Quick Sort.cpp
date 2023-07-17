@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 using namespace std;
 int partition(int arr[], int low, int high, int pivot){
@@ -12,24 +11,27 @@ int partition(int arr[], int low, int high, int pivot){
     PIndex--;
 	return PIndex;
 }
-
-void quickSort(int arr[], int low, int high){
-	if(low < high) {
+void quickSort(int arr[], int low, int high)
+{
+	if(low < high)
+    {
 	    int pivot = arr[high];
 	    int PIndex = partition(arr, low, high, pivot);
-            quickSort(arr, low, PIndex-1);
-            quickSort(arr, PIndex+1, high);
+        quickSort(arr, low, PIndex-1);
+        quickSort(arr, PIndex+1, high);
 	}
 }
-
 int main()
 {
-
-	int arr[7]={6,3,9,5,2,8,7};
-	int n=7;
-
+    int arr[50],n,i;
+	cout << "Enter number of elements in array: ";
+    cin >> n;
+    cout << "Enter elements of array: ";
+    for (i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
 	quickSort(arr, 0 , n-1);
-
 	cout<<"The sorted array is: ";
 	for( int i = 0 ; i < n; i++){
 		cout<< arr[i]<<" ";
